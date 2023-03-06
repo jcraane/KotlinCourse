@@ -16,7 +16,7 @@ fun main() {
     println("Firstname: ${person.firstName}, Lastname: ${person.lastName}")
 }
 
-class Person {
+private class Person {
     var firstName: String? by FileRepositoryDelegate(repository)
     var lastName: String? by FileRepositoryDelegate(repository)
 }
