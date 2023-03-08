@@ -1,13 +1,13 @@
 package course.examples.delegates
 
 fun main() {
-    class InfoSet<T>(private val set: MutableSet<T>) : MutableSet<T> by set {
+    class InfoSet<T>(private val delegate: MutableSet<T>) : MutableSet<T> by delegate {
         var additions = 0
             private set
 
         override fun add(element: T): Boolean {
             additions++
-            return set.add(element)
+            return delegate.add(element)
         }
     }
 
