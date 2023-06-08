@@ -13,6 +13,9 @@ fun main() = runBlocking {
     launch(Dispatchers.Default) { // will get dispatched to DefaultDispatcher
         println("Default               : I'm working in thread ${Thread.currentThread().name}")
     }
+    launch(Dispatchers.IO) { // will get dispatched to DefaultDispatcher
+        println("IO                    : I'm working in thread ${Thread.currentThread().name}")
+    }
     launch(newSingleThreadContext("MyOwnThread")) { // will get its own new thread
         println("newSingleThreadContext: I'm working in thread ${Thread.currentThread().name}")
     }
@@ -29,6 +32,7 @@ fun main() = runBlocking {
     println("All Done")
 }
 
+// This function runs on a separate thread
 private suspend fun expensiveComputation(): Int = withContext(Dispatchers.Default) {
     println("Expensive operation executing on ${Thread.currentThread().name}")
     delay(1000)

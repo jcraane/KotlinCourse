@@ -14,9 +14,6 @@ fun main() = runBlocking<Unit> {
         val orders = getCustomerOrders(customer.id)
         println("Customer orders: $orders")
     }
-
-    delay(1.5.seconds)
-    job.cancel()
 }
 
 @OptIn(ExperimentalTime::class)
@@ -29,6 +26,7 @@ suspend fun getCustomer(id: Int): Customer {
 
 @OptIn(ExperimentalTime::class)
 suspend fun getCustomerOrders(customerId: Int): List<Order> {
+    println(Thread.currentThread().name)
     if (customerId == 3) throw RuntimeException("Customer not found")
 
     return withContext(Dispatchers.IO) {
