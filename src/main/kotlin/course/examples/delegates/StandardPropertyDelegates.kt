@@ -1,4 +1,4 @@
-package course.examples
+package course.examples.delegates
 
 import kotlin.properties.Delegates.observable
 import kotlin.properties.Delegates.vetoable
