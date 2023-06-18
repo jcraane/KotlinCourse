@@ -1,4 +1,4 @@
-package course.examples
+package course.examples.functions
 
 private data class Person(val name: String, val age: Int) {
     var street: String = ""

@@ -1,4 +1,4 @@
-package course.examples
+package course.examples.objectsandclasses
 
 fun main() {
     data class Person(val name: String, val age: Int)
