@@ -5,6 +5,7 @@ fun main() {
 
     val person1 = Person("John Doe", 30)
     val (name, age) = person1
+//    show Kotlin bytecode and decompiled Java code
     println("Name: $name, Age: $age")
 
     val person2 = Person("John Doe", 30)
